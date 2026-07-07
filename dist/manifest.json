@@ -1,0 +1,54 @@
+{
+  "manifest_version": 3,
+  "name": "FocusFlow",
+  "description": "Ajuda a perceber quando você saiu do foco durante uma sessão de trabalho ou estudo.",
+  "version": "1.0.0",
+  "icons": {
+    "16": "public/icons/icon-16.png",
+    "48": "public/icons/icon-48.png",
+    "128": "public/icons/icon-128.png"
+  },
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "public/icons/icon-16.png",
+      "48": "public/icons/icon-48.png",
+      "128": "public/icons/icon-128.png"
+    }
+  },
+  "background": {
+    "service_worker": "service-worker-loader.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "assets/distractionOverlay.ts-loader-BKLtqfNK.js"
+      ],
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": [
+    "storage",
+    "tabs",
+    "alarms",
+    "scripting"
+  ],
+  "web_accessible_resources": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "resources": [
+        "assets/sendMessage-k4toGxBv.js",
+        "assets/distractionOverlay.ts-CbBVSfTA.js"
+      ],
+      "use_dynamic_url": false
+    }
+  ]
+}

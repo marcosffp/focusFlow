@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface-dark: #0f1021;
+  --color-surface-dark-elevated: #171a2e;
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  @apply bg-white dark:bg-surface-dark;
+}

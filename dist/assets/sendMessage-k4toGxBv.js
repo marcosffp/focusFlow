@@ -1,0 +1,1 @@
+function e(e){return chrome.runtime.sendMessage(e)}export{e as t};
